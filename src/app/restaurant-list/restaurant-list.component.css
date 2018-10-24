@@ -1,0 +1,50 @@
+
+@font-face {
+    font-family: 'AvenirNextRegular';
+    src: url('/src/assets/fonts/AvenirNext-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'AvenirNextBold';
+    src: url('/src/assets/fonts/AvenirNext-DemiBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+ul {
+    background-color: black;
+    list-style: none;
+    padding:0;
+}
+
+li {
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 180px;
+}
+
+div.info {
+    padding-left: 12px;
+    padding-top: 130px;
+}
+
+li > div.info > div.name, li > div.info > div.category {
+    color: white;
+    font-weight: bold;
+}
+
+li > div.info > div.name {
+    font-size: 16px;
+    font-family: 'AvenirNextBold', Arial, Helvetica, sans-serif
+}
+
+li > div.info > div.category {
+    font-size: 12px;
+    font-family: 'AvenirNextRegular', Arial, Helvetica, sans-serif
+}
+
+@media screen and (min-width: 768px) {
+    li {
+        min-height: 350px;
+    }
+    div.info {
+        padding-top: 300px;
+    }
+}
