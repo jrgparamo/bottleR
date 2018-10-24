@@ -1,19 +1,24 @@
 <!-- Restaurant List Component -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <ul>
+          <li class="list-item"
+              *ngFor="let restaurant of restaurants; let i = index"
+              [ngStyle]="{
+                  'background-image': 'linear-gradient(transparent 60%,
+                  #151825), url(' + restaurant.backgroundImageURL + ')'
+              }">
 
-<ul>
-    <li class="list-item"
-        *ngFor="let restaurant of restaurants; let i = index"
-        [ngStyle]="{
-            'background-image': 'linear-gradient(transparent 60%,
-            #151825), url(' + restaurant.backgroundImageURL + ')'
-        }">
-
-        <div class="info">
-            <div class="name">{{restaurant.name}}</div>
-            <div class="category">{{restaurant.category}}</div>
-        </div>
-    </li>
-</ul>
+              <div class="info">
+                  <div class="name">{{restaurant.name}}</div>
+                  <div class="category">{{restaurant.category}}</div>
+              </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 
 <!-- <ul>
