@@ -1,0 +1,27 @@
+<!-- Restaurant Details Component -->
+<!-- Google Maps -->
+
+<!-- Restaurant Info -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="title">
+                <div class="name">{{restaurant.name}}</div>
+                <div class="category">{{restaurant.category}}</div>
+            </div>
+            
+            <div class="address">
+                <ul>
+                    <li class="formatted-address"
+                        *ngFor="let address of restaurant.location.formattedAddress">
+                        {{address}}
+                    </li>
+                </ul>
+            </div>
+            <div class="contact" *ngIf="restaurant.contact">
+                <div class="phone" *ngIf="restaurant.contact.formattedPhone">{{restaurant.contact.formattedPhone}}</div>
+                <div class="social" *ngIf="restaurant.contact.twitter">{{'@'+restaurant.contact.twitter}}</div>
+            </div>
+        </div>
+    </div>
+</div>

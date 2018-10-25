@@ -6,6 +6,7 @@ import { throwError } from 'rxjs';
 @Injectable()
 export class ServerCallService {
     constructor(private http: Http) {}
+    // BROKEN
     getRestaurantDataBROKEN() {
         return this.http.get('https://s3.amazonaws.com/br-codingexams/restaurants.json')
          .pipe(map(

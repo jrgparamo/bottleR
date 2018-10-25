@@ -7,3 +7,9 @@ header {
     padding: 15px;
     min-height: 50px;
 }
+.arrow-container {
+    max-height: 50px;
+}
+#arrow {
+    height: 35px;
+}

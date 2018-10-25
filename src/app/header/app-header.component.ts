@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./app-header.component.css'],
 })
 
-export class AppHeader {
+export class AppHeader implements OnInit{
 
+showBackBtn = true;
+    constructor( private route: ActivatedRoute){}
+    ngOnInit(){
+
+    }
 }
