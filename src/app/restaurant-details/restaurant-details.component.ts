@@ -11,6 +11,9 @@ import { RestaurantDataService } from '../restaurant-data.service';
 
 export class RestaurantDetails implements OnInit {
     restaurant;
+    zoom: number = 14;
+    lat: number = 32.937492;
+    lng: number = -96.7502451;
 
     constructor(private restaurantDataService: RestaurantDataService,
                 private router: Router) {
@@ -24,10 +27,13 @@ export class RestaurantDetails implements OnInit {
 
     getRestaurant() {
         this.restaurant = this.restaurantDataService.getRestaurant();
+        this.lat = this.restaurant.location.lat;
+        this.lng = this.restaurant.location.lng;
         console.log(this.restaurant)
     }
     ngOnInit() {
         this.getRestaurant();
+
     }
 
 }
