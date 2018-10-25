@@ -12,7 +12,8 @@ import { ServerCallService } from './server-call.service';
 import { RestaurantDataService } from './restaurant-data.service';
 
 const appRoutes: Routes = [
-  { path: '', component: RestaurantList },
+  { path: '', redirectTo: '/list', pathMatch: 'full'},
+  { path: 'list', component: RestaurantList },
   { path: 'details', component: RestaurantDetails }
 ];
 @NgModule({

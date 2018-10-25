@@ -38,6 +38,15 @@ li > div.info > div.category {
     font-family: 'Lato', sans-serif;
 }
 
+@media screen and (min-width: 576px) {
+    li {
+        min-height: 300px;
+    }
+    div.info {
+        padding-top: 250px;
+    }
+}
+
 @media screen and (min-width: 768px) {
     li {
         min-height: 350px;

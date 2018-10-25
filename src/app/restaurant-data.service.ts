@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RestaurantDataService {
 
-  currentRestaurant = {};
+  currentRestaurant;
   restuarants = [];
 
   constructor() { }

@@ -17,19 +17,21 @@ export class RestaurantDetails implements OnInit {
 
     constructor(private restaurantDataService: RestaurantDataService,
                 private router: Router) {
-                    // if(this.restaurant){
-                    //     console.log(this.restaurant)
-                    // } else{
-                    //     console.error('NO_DATA_PASSTHROUGH');
-                    //     this.router.navigate(['/']);
-                    // }
+                    if(this.restaurantDataService.getRestaurant()){
+                        console.log(this.restaurant)
+                    } else{
+                        console.error('NO_DATA_PASSTHROUGH');
+                        this.router.navigate(['/list']);
+                    }
                 }
 
     getRestaurant() {
-        this.restaurant = this.restaurantDataService.getRestaurant();
-        this.lat = this.restaurant.location.lat;
-        this.lng = this.restaurant.location.lng;
-        console.log(this.restaurant)
+        if(this.restaurantDataService.getRestaurant()){
+            this.restaurant = this.restaurantDataService.getRestaurant();
+            this.lat = this.restaurant.location.lat;
+            this.lng = this.restaurant.location.lng;
+            console.log(this.restaurant)
+        }
     }
     ngOnInit() {
         this.getRestaurant();

@@ -41,3 +41,9 @@ ul {
 .phone {
     padding-bottom: 26px;
 }
+
+@media screen and (min-width: 768px) {
+    agm-map {
+        height: 380px;
+    }
+}
