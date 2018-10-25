@@ -8,8 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class AppHeader implements OnInit{
-
-showBackBtn = true;
+    // TODO: Fix Back buttton to show only on details route
+    showBackBtn = true;
     constructor( private route: ActivatedRoute){}
     ngOnInit(){
 

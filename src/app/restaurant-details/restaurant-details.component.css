@@ -2,9 +2,6 @@ agm-map {
     height: 180px;
 }
 
-.container-fluid {
-    padding:0;
-}
 .title {
     background-color: rgb(52,179,121);
     color: white;
@@ -28,6 +25,11 @@ agm-map {
     padding-bottom: 26px;
 }
 
+.formatted-address {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -36,6 +38,7 @@ ul {
 
 .contact {
     padding-left: 12px;
+    font-family: 'Lato', sans-serif;
 }
 
 .phone {

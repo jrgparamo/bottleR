@@ -1,14 +1,12 @@
-
-
-
-.container-fluid {
+/* .container-fluid, .list-container, .col {
     padding: 0;
-}
+} */
 
 ul {
     background-color: black;
     list-style: none;
     padding: 0;
+    margin-bottom: 0px;
 }
 
 li {
