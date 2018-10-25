@@ -10,7 +10,7 @@ import { RestaurantDataService } from '../restaurant-data.service';
 })
 
 export class RestaurantDetails implements OnInit {
-    restaurant = this.restaurantDataService.getRestaurant();
+    restaurant;
 
     constructor(private restaurantDataService: RestaurantDataService,
                 private router: Router) {

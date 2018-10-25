@@ -7,9 +7,12 @@ header {
     padding: 15px;
     min-height: 50px;
 }
+a {
+    outline:0;
+}
 .arrow-container {
     max-height: 50px;
 }
-#arrow {
+#arrow-img {
     height: 35px;
 }
