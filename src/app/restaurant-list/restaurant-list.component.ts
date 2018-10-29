@@ -39,6 +39,8 @@ export class RestaurantList implements OnInit {
     clickedMarker(index, restaurant){
         this.restaurant = restaurant;
         this.scrollToListItem(index);
+        this.openWindow(index);
+        this.isInfoWindowOpen(index);
         console.log(restaurant, "From marker")
     }
 
