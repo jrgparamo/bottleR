@@ -12,7 +12,8 @@ import { ServerCallService } from './server-call.service';
 import { RestaurantDataService } from './restaurant-data.service';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/list', pathMatch: 'full'},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: AppComponent},
   { path: 'list', component: RestaurantList },
   { path: 'details', component: RestaurantDetails }
 ];

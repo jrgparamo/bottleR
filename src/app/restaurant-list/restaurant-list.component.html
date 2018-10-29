@@ -1,22 +1,69 @@
-<!-- Restaurant List Component -->
-<div class="list-container">
-    <div class="row no-gutters">
-      <div class="col">
-        <ul>
-            <li class="list-item"
-                *ngFor="let restaurant of restaurants; let i = index"
-                [ngStyle]="
-                {
-                  'background-image': 'linear-gradient(transparent 60%,
-                  #151825), url(' + restaurant.backgroundImageURL + ')'
-                }"
-                (click)="goToDetails(i, restaurant)">
-              <div class="info">
-                  <div class="name">{{restaurant.name}}</div>
-                  <div class="category">{{restaurant.category}}</div>
-              </div>
-            </li>
-        </ul>
+<div class="component-container">
+  <!-- Restaurant List Component -->
+  <div class="list-container">
+      <div class="row no-gutters">
+        <div class="col">
+          <ul>
+              <li class="list-item"
+                  *ngFor="let restaurant of restaurants; let i = index"
+                  [ngStyle]="
+                  {
+                    'background-image': 'linear-gradient(transparent 60%,
+                    #151825), url(' + restaurant.backgroundImageURL + ')'
+                  }"
+                  (click)="goToDetails(i, restaurant)">
+                <div class="info">
+                    <div class="name">{{restaurant.name}}</div>
+                    <div class="category">{{restaurant.category}}</div>
+                </div>
+              </li>
+          </ul>
+        </div>
       </div>
+  </div>
+
+  <div class="details-container">
+    <!-- Google Maps -->
+    <div class="map-container">
+        <agm-map
+            [zoom]="zoom"
+            [latitude]="lat"
+            [longitude]="lng">
+            <!-- *ngFor="let m of restaurants; let i = index"
+            (markerClick)="clickedMarker(i, m)" -->
+            <agm-marker
+
+                [latitude]="lat"
+                [longitude]="lng">
+                <agm-info-window
+                    [isOpen]="true">
+                    {{restaurant.name}}
+                </agm-info-window>
+            </agm-marker>
+        </agm-map>
     </div>
+  
+    <!-- Restaurant Info -->
+    <div class="row no-gutters">
+        <div class="col">
+            <div class="title">
+                <div class="name">{{restaurant.name}}</div>
+                <div class="category">{{restaurant.category}}</div>
+            </div>
+            
+            <div class="address">
+                <ul>
+                    <li class="formatted-address"
+                        *ngFor="let address of restaurant.location.formattedAddress">
+                        {{address}}
+                    </li>
+                </ul>
+            </div>
+            <div class="contact" *ngIf="restaurant.contact">
+                <div class="phone" *ngIf="restaurant.contact.formattedPhone">{{restaurant.contact.formattedPhone}}</div>
+                <div class="social" *ngIf="restaurant.contact.twitter">{{'@'+restaurant.contact.twitter}}</div>
+            </div>
+        </div>
+    </div>
+  </div>
 </div>

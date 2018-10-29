@@ -16,3 +16,8 @@ a {
 #arrow-img {
     height: 35px;
 }
+@media screen and (min-width: 767px) {
+    .arrow-container {
+        display: none;
+    }
+}

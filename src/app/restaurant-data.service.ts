@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class RestaurantDataService {
 
   currentRestaurant;
-  restuarants = [];
+  restuarants;
 
   constructor() { }
 
