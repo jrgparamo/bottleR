@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { ServerCallService } from '../server-call.service';
 import { RestaurantDataService } from '../restaurant-data.service';
 
 @Component({
@@ -15,24 +14,24 @@ export class RestaurantList implements OnInit {
     restaurants = [];
     restaurant;
 
-    zoom: number = 15;
+    zoom: number = 17;
     lat: number = 32.937492;
     lng: number = -96.7502451;
+    openedWindow : number = 0;
 
-    mobileView = true;
     constructor(
         private router: Router,
         private route: ActivatedRoute,
-        private serverCallService: ServerCallService,
-        private restaurantDataService: RestaurantDataService) {
-            // if(this.restaurants.length){
-            //     console.log(this.restaurants)
-            // } else{
-            //     console.error('NO_DATA_PASSTHROUGH');
-            //     //this.renderList();
-            //     this.restaurants = this.serverCallService.getRestaurantData();
-            // }
-        }
+        private restaurantDataService: RestaurantDataService
+    ) {}
+
+    openWindow(id) {
+        this.openedWindow = id;
+    }
+
+    isInfoWindowOpen(id) {
+        return this.openedWindow == id;
+    }
     scrollToListItem(index) {
         document.querySelectorAll(".list-item")[index].scrollIntoView();
     }
@@ -51,7 +50,9 @@ export class RestaurantList implements OnInit {
         this.restaurant = this.restaurants[index];
         this.lat = this.restaurant.location.lat;
         this.lng = this.restaurant.location.lng;
-        if(window.innerWidth < 576){
+        this.openWindow(index);
+        this.isInfoWindowOpen(index);
+        if(window.innerWidth <= 766){
             this.router.navigate(['/details']);
         }
     }

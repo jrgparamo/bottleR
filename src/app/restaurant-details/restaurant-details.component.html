@@ -1,7 +1,21 @@
+<app-header></app-header>
+
 <!-- Restaurant Details Component -->
 <!-- Google Maps -->
-<agm-map [zoom]="zoom" [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<agm-map 
+    [zoom]="zoom" 
+    [latitude]="lat" 
+    [longitude]="lng">
+    <agm-marker 
+        [latitude]="lat" 
+        [longitude]="lng">
+            <agm-info-window
+                [isOpen]="true">
+                <strong>{{restaurant.name}}</strong>
+                <br>
+                {{restaurant.location.address}}
+            </agm-info-window>
+    </agm-marker>
 </agm-map>
 
 <!-- Restaurant Info -->

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -8,9 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class AppHeader implements OnInit{
-    // TODO: Fix Back buttton to show only on details route
-    showBackBtn = true;
-    constructor( private route: ActivatedRoute){}
+    showBackBtn = this.router.url === '/details' ? true : false;
+    constructor(
+        private activatedRoute: ActivatedRoute,
+        private router: Router
+    ){}
     ngOnInit(){
 
     }

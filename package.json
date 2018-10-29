@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "ng build --prod --base-href 'https://jrgparamo.github.io/bottleR/' && npx ngh --no-silent --dir=dist/bottleR",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

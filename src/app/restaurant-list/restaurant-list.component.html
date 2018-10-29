@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="component-container">
   <!-- Restaurant List Component -->
   <div class="list-container">
@@ -29,15 +31,17 @@
             [zoom]="zoom"
             [latitude]="lat"
             [longitude]="lng">
-            <!-- *ngFor="let m of restaurants; let i = index"
-            (markerClick)="clickedMarker(i, m)" -->
-            <agm-marker
 
-                [latitude]="lat"
-                [longitude]="lng">
+            <agm-marker
+                *ngFor="let m of restaurants; let i = index"
+                (markerClick)="clickedMarker(i, m)"
+                [latitude]="m.location.lat"
+                [longitude]="m.location.lng">
                 <agm-info-window
-                    [isOpen]="true">
-                    {{restaurant.name}}
+                    [isOpen]="isInfoWindowOpen(i)">
+                    <strong>{{m.name}}</strong>
+                    <br>
+                    {{m.location.address}}
                 </agm-info-window>
             </agm-marker>
         </agm-map>
